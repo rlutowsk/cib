@@ -1,0 +1,9 @@
+#
+# Makefile rules for the cib package
+#
+KEXT_NAME = cib
+KEXT_SOURCES = src/cib.c
+
+# include shared GAP package build system
+GAPPATH = @GAPPATH@
+include Makefile.gappkg
