@@ -81,7 +81,7 @@ InstallGlobalFunction(ClearCIBMaxExponentCache,
 InstallMethod(CoboundaryBasisInt,
     "for affine crystallographic groups acting on right",
     #[IsAffineCrystGroupOnRight and IsStandardAffineCrystGroup],
-	[IsStandardAffineCrystGroup],
+	[IsIntegralAffineCrystGroup],
     function(agrp)
         local equation, deg, id, snf, long, phom, pgrp, res;
         # retrieve the point (holonomy) group
@@ -418,7 +418,7 @@ end;
 
 InstallMethod(VectorSystem,
     "for affine crystallographic groups acting on right",
-    [IsAffineCrystGroupOnRight and IsStandardAffineCrystGroup],
+    [IsAffineCrystGroupOnRight and IsIntegralAffineCrystGroup],
     function(agrp)
 		local pg, ph, d;
 
@@ -432,7 +432,7 @@ InstallMethod(VectorSystem,
 
 InstallMethod(VectorSystem,
     "for affine crystallographic groups acting on left",
-    [IsAffineCrystGroupOnLeft and IsStandardAffineCrystGroup],
+    [IsAffineCrystGroupOnLeft and IsIntegralAffineCrystGroup],
 	function(agrp)
 		return VectorSystem( TransposedMatrixGroup(agrp) );
 	end

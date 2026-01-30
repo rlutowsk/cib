@@ -54,7 +54,7 @@ DeclareAttribute("CoboundaryBasisInt", IsIntegralAffineCrystGroup);
 #! As for <Ref Attr="CoboundaryBasisInt"/>, the returned list corresponds to the list of sorted
 #! elements of the <Ref BookName="Cryst" Func="PointGroup"/> of <A>grp</A>.
 #! If <A>grp</A> acts from the left, then the transposed matrices should be used.
-DeclareAttribute("VectorSystem", IsStandardAffineCrystGroup);
+DeclareAttribute("VectorSystem", IsIntegralAffineCrystGroup);
 
 #! @Section Braces
 
