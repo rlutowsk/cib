@@ -1,4 +1,4 @@
-# The GAP package cib
+# The GAP package CIB
 
 TODO: add a description of your package; perhaps also instructions how how to
 install and use it, resp. where to find out more

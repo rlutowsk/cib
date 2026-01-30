@@ -1,5 +1,5 @@
 #
-# cib: Cofinite Integral Braces in GAP
+# CIB: Cofinite Integral Braces in GAP
 #
 # This file contains package meta data. For additional information on
 # the meaning and correct usage of these fields, please consult the
@@ -8,7 +8,7 @@
 #
 SetPackageInfo( rec(
 
-PackageName := "cib",
+PackageName := "CIB",
 Subtitle := "Cofinite Integral Braces in GAP",
 Version := "0.1",
 Date := "27/01/2026", # dd/mm/yyyy format
@@ -18,7 +18,7 @@ Persons := [
   rec(
     FirstNames := "Rafał",
     LastName := "Lutowski",
-    WWWHome := "mat.ug.edu.pl/~rlutowsk",
+    WWWHome := "https://mat.ug.edu.pl/~rlutowsk",
     Email := "rafal.lutowski@ug.edu.pl",
     IsAuthor := true,
     IsMaintainer := true,
@@ -55,7 +55,7 @@ PackageDoc := rec(
 
 Dependencies := rec(
   GAP := ">= 4.13",
-  NeededOtherPackages := [ ],
+  NeededOtherPackages := [ ["cryst", "4.1.30"] ],
   SuggestedOtherPackages := [ ],
   ExternalConditions := [ ],
 ),

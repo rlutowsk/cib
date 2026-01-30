@@ -4,6 +4,8 @@
 KEXT_NAME = cib
 KEXT_SOURCES = src/cib.c
 
+CFLAGS ?= -O3 -march=native -Wall
+
 # include shared GAP package build system
 GAPPATH = @GAPPATH@
 include Makefile.gappkg
