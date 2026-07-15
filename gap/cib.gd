@@ -14,13 +14,15 @@
 #! This section will describe the properties and methods, which
 #! can be thought of as an extension to the <Package>Cryst</Package> package.
 
+DeclareAttribute("SSortedGeneratorsOfGroup", IsGroup);
+
 #! @Arguments grp
 #! @Returns true if <A>grp</A> is an integral affine crystallographic group.
 #! @Description
 #! An affine cryst group is called **standard**, if its <Ref BookName="Cryst" Func="InternalBasis"/> forms an identity matrix.
 #! An affine cryst group is called **integral**, if it is standard, and its <Ref BookName="Cryst" Func="PointGroup"/> is an integer
 #! matrix group.
-DeclareProperty("IsIntegralAffineCrystGroup", IsStandardAffineCrystGroup);
+DeclareProperty("IsIntegralAffineCrystGroup", IsAffineCrystGroupOnLeftOrRight);
 
 #! @Arguments grp
 #! @Returns a basis of rational space of vector systems for <A>grp</A>, which define equivalence of extensions with <A>grp</A>.
@@ -54,7 +56,13 @@ DeclareAttribute("CoboundaryBasisInt", IsIntegralAffineCrystGroup);
 #! As for <Ref Attr="CoboundaryBasisInt"/>, the returned list corresponds to the list of sorted
 #! elements of the <Ref BookName="Cryst" Func="PointGroup"/> of <A>grp</A>.
 #! If <A>grp</A> acts from the left, then the transposed matrices should be used.
-DeclareAttribute("VectorSystem", IsIntegralAffineCrystGroup);
+DeclareAttribute("VectorSystem", IsAffineCrystGroupOnLeftOrRight);
+
+DeclareOperation("GeneratorsOfIntegralAffineCrystGroupOnRight", [IsListOrCollection]);
+
+DeclareOperation("GeneratorsOfIntegralAffineCrystGroupOnLeft", [IsListOrCollection]);
+
+DeclareAttribute("CofiniteIntegralBracesRepsGenerators", IsIntegralAffineCrystGroup);
 
 #! @Section Braces
 
@@ -74,6 +82,8 @@ DeclareGlobalFunction("ClearCIBMaxExponentCache");
 
 BindGlobal("CIBMaxExponentCache", rec( abelian_groups := [], exponents := [] ) );
 
+BindGlobal("CIB", rec());
+
 #! @Section Cofinite integral braces
 
 DeclareCategory("IsCIBVectorSystemContext", IsComponentObjectRep and IsAttributeStoringRep);
@@ -87,3 +97,9 @@ DeclareGlobalFunction("CIBVectorSystemContext");
 #! As in <Ref Attr="CoboundaryBasisInt"/>, the returned list corresponds to the list of sorted
 #! elements of the <Ref BookName="Cryst" Func="PointGroup"/> of the affine crystallographic group attached to <A>obj</A>.
 DeclareAttribute("CofiniteIntegralBraceVectorSystems", IsObject);
+
+DeclareOperation("IsZmodnZGroup", [IsMatrix, IsPosInt]);
+
+DeclareGlobalFunction("AllAbelianPGroups");
+
+DeclareGlobalFunction("AllAbelianGroups");
