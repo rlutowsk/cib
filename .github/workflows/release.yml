@@ -11,7 +11,7 @@ on:
       force:
         description: "Allow overwriting an existing release, or making a release with an incorrect date"
         type: boolean
-        required: false
+        required: true
         default: false
 
 permissions: write-all
